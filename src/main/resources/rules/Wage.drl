@@ -1,0 +1,14 @@
+package com.sample.app;
+
+import com.sample.app.model.Person;
+
+dialect "java"
+
+rule "Wage"
+  when
+    Person(hourlyRate * numberOfHours > 100)
+    Person(name : firstName, surname : lastName)
+  then
+    System.out.println("Hello " + name + " " + surname + "!");
+    System.out.println("You are rich!");
+end
